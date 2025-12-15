@@ -7,6 +7,7 @@ import Dashboard from './paginas/Dashboard'
 import Equipos from './paginas/Equipos'
 import MisReservas from './paginas/MisReservas'
 import Navegacion from './componentes/Navegacion'
+import PieDePagina from './componentes/PieDePagina'
 
 function App() {
   const [usuarioAutenticado, setUsuarioAutenticado] = useState(false)
@@ -38,23 +39,26 @@ function App() {
   return (
     <div className="app-container">
       {usuarioAutenticado && <Navegacion usuario={usuario} onLogout={manejarLogout} />}
-      <Routes>
-        <Route path="/login" element={<Login onLogin={manejarLogin} />} />
-        <Route path="/registro" element={<Registro onLogin={manejarLogin} />} />
-        <Route 
-          path="/dashboard" 
-          element={usuarioAutenticado ? <Dashboard usuario={usuario} /> : <Navigate to="/login" />} 
-        />
-        <Route 
-          path="/equipos" 
-          element={usuarioAutenticado ? <Equipos usuario={usuario} /> : <Navigate to="/login" />} 
-        />
-        <Route 
-          path="/mis-reservas" 
-          element={usuarioAutenticado ? <MisReservas usuario={usuario} /> : <Navigate to="/login" />} 
-        />
-        <Route path="/" element={usuarioAutenticado ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
-      </Routes>
+      <main className="contenido-principal">
+        <Routes>
+          <Route path="/login" element={<Login onLogin={manejarLogin} />} />
+          <Route path="/registro" element={<Registro onLogin={manejarLogin} />} />
+          <Route 
+            path="/dashboard" 
+            element={usuarioAutenticado ? <Dashboard usuario={usuario} /> : <Navigate to="/login" />} 
+          />
+          <Route 
+            path="/equipos" 
+            element={usuarioAutenticado ? <Equipos usuario={usuario} /> : <Navigate to="/login" />} 
+          />
+          <Route 
+            path="/mis-reservas" 
+            element={usuarioAutenticado ? <MisReservas usuario={usuario} /> : <Navigate to="/login" />} 
+          />
+          <Route path="/" element={usuarioAutenticado ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
+        </Routes>
+      </main>
+      <PieDePagina />
     </div>
   )
 }

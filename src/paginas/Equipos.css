@@ -1,10 +1,11 @@
 .equipos-contenedor {
   width: 100%;
-  min-height: calc(100vh - 70px);
-  margin: 0;
+  max-width: var(--ancho-maximo-contenido);
+  margin: 0 auto;
   padding: var(--spacing-2xl) var(--container-padding-desktop);
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .equipos-encabezado {
