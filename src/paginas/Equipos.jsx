@@ -10,6 +10,14 @@ function Equipos({ usuario }) {
   const [cargando, setCargando] = useState(false)
   const [mostrarDisponibles, setMostrarDisponibles] = useState(false)
 
+  const obtenerFechaMinima = () => {
+    const hoy = new Date()
+    const año = hoy.getFullYear()
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0')
+    const día = String(hoy.getDate()).padStart(2, '0')
+    return `${año}-${mes}-${día}`
+  }
+
   useEffect(() => {
     cargarEquipos()
   }, [])
@@ -91,6 +99,7 @@ function Equipos({ usuario }) {
             value={fechaSeleccionada}
             onChange={(e) => setFechaSeleccionada(e.target.value)}
             className="input-fecha"
+            min={obtenerFechaMinima()}
           />
           <button 
             onClick={buscarDisponibles} 
