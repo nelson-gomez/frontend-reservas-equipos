@@ -84,6 +84,13 @@ function Equipos({ usuario }) {
     }
   }
 
+  const limpiarFiltro = () => {
+    setFechaSeleccionada('')
+    setMostrarDisponibles(false)
+    setEquiposDisponibles([])
+    toast.info('Filtro limpiado')
+  }
+
   return (
     <div className="equipos-contenedor">
       <div className="equipos-encabezado">
@@ -107,6 +114,13 @@ function Equipos({ usuario }) {
             disabled={cargando}
           >
             {cargando ? 'Buscando...' : 'Buscar Disponibles'}
+          </button>
+          <button 
+            onClick={limpiarFiltro} 
+            className="btn-limpiar"
+            disabled={cargando}
+          >
+            Limpiar Filtro
           </button>
         </div>
       </div>

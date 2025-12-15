@@ -82,6 +82,30 @@
   opacity: 0.6;
 }
 
+.btn-limpiar {
+  background-color: var(--color-text-light);
+  color: var(--color-white);
+  padding: 11px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-limpiar:hover:not(:disabled) {
+  background-color: var(--color-text);
+  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.2);
+}
+
+.btn-limpiar:disabled {
+  background-color: var(--color-text-lighter);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .equipos-seccion {
   background: var(--color-white);
   padding: 25px;
