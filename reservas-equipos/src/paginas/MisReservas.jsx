@@ -49,11 +49,15 @@ function MisReservas({ usuario }) {
   }
 
   const formatearFecha = (fecha) => {
-    return new Date(fecha).toLocaleDateString('es-ES', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
+    const fechaObj = new Date(fecha)
+    const año = fechaObj.getUTCFullYear()
+    const mes = fechaObj.getUTCMonth()
+    const día = fechaObj.getUTCDate()
+    
+    const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 
+                   'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+    
+    return `${día} de ${meses[mes]} de ${año}`
   }
 
   const reservasActivas = reservas.filter(r => r.estado === 'activa')
