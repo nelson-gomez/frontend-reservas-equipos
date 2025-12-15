@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import './MisReservas.css'
 
 function MisReservas({ usuario }) {
+  const navegar = useNavigate()
   const [reservas, setReservas] = useState([])
   const [cargando, setCargando] = useState(true)
   const [cancelando, setCancelando] = useState(null)
@@ -75,7 +77,12 @@ function MisReservas({ usuario }) {
       ) : reservas.length === 0 ? (
         <div className="sin-reservas">
           <p>No tienes reservas aún</p>
-          <a href="/equipos" className="btn-ir-equipos">Ir a Equipos</a>
+          <button 
+            onClick={() => navegar('/equipos')} 
+            className="btn-ir-equipos"
+          >
+            Ir a Equipos
+          </button>
         </div>
       ) : (
         <>
