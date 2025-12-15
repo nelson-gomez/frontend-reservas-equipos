@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import './Dashboard.css'
 
 function Dashboard({ usuario }) {
+  const navegar = useNavigate()
   const [estadisticas, setEstadisticas] = useState({
     totalEquipos: 0,
     misReservas: 0,
@@ -81,16 +83,22 @@ function Dashboard({ usuario }) {
       <div className="dashboard-acciones">
         <h2>Acciones Rápidas</h2>
         <div className="acciones-grid">
-          <a href="/equipos" className="accion-tarjeta">
+          <button 
+            onClick={() => navegar('/equipos')} 
+            className="accion-tarjeta"
+          >
             <span className="accion-icono">🔍</span>
             <h3>Ver Equipos</h3>
             <p>Consulta equipos disponibles y reserva</p>
-          </a>
-          <a href="/mis-reservas" className="accion-tarjeta">
+          </button>
+          <button 
+            onClick={() => navegar('/mis-reservas')} 
+            className="accion-tarjeta"
+          >
             <span className="accion-icono">📅</span>
             <h3>Mis Reservas</h3>
             <p>Gestiona tus reservas activas</p>
-          </a>
+          </button>
         </div>
       </div>
     </div>
