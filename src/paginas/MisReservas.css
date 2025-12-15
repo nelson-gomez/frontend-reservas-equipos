@@ -14,29 +14,32 @@
 }
 
 .mis-reservas-encabezado h1 {
-  color: #2c3e50;
+  color: var(--color-text);
   font-size: 28px;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .mis-reservas-encabezado p {
-  color: #7f8c8d;
+  color: var(--color-text-light);
   font-size: 15px;
 }
 
 .reservas-seccion {
-  background: white;
+  background: var(--color-white);
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
   margin-bottom: 25px;
 }
 
 .reservas-seccion h2 {
-  color: #2c3e50;
+  color: var(--color-text);
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .reservas-lista {
@@ -47,7 +50,7 @@
 
 .tarjeta-reserva {
   padding: 18px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -55,22 +58,24 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-wrap: wrap;
   gap: 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
 }
 
 .tarjeta-reserva.activa {
-  background-color: #f0f8ff;
-  border-left-color: #27ae60;
+  background-color: rgba(5, 150, 105, 0.05);
+  border-left-color: var(--color-success);
 }
 
 .tarjeta-reserva.cancelada {
-  background-color: #fff5f5;
-  border-left-color: #e74c3c;
+  background-color: rgba(220, 38, 38, 0.05);
+  border-left-color: var(--color-danger);
   opacity: 0.8;
 }
 
 .tarjeta-reserva:hover {
   transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .reserva-contenido {
@@ -83,13 +88,14 @@
 
 .reserva-equipo h3 {
   margin: 0 0 8px 0;
-  color: #2c3e50;
+  color: var(--color-text);
   font-size: 16px;
+  font-weight: 700;
 }
 
 .reserva-descripcion {
   margin: 0;
-  color: #7f8c8d;
+  color: var(--color-text-light);
   font-size: 13px;
 }
 
@@ -102,81 +108,86 @@
 .reserva-detalles p {
   margin: 0;
   font-size: 13px;
-  color: #555;
+  color: var(--color-text-light);
 }
 
 .reserva-detalles strong {
-  color: #2c3e50;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .estado-activa {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: rgba(5, 150, 105, 0.1);
+  color: var(--color-success-dark);
   padding: 3px 7px;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 11px;
 }
 
 .estado-cancelada {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--color-danger-dark);
   padding: 3px 7px;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 11px;
 }
 
 .btn-cancelar {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--color-danger);
+  color: var(--color-white);
   padding: 8px 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
 }
 
 .btn-cancelar:hover:not(:disabled) {
-  background-color: #c0392b;
+  background-color: var(--color-danger-dark);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
 }
 
 .btn-cancelar:disabled {
-  background-color: #ccc;
+  background-color: var(--color-text-lighter);
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .sin-reservas {
-  background: white;
+  background: var(--color-white);
   padding: 40px 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
   text-align: center;
 }
 
 .sin-reservas p {
-  color: #7f8c8d;
+  color: var(--color-text-light);
   font-size: 16px;
   margin-bottom: 18px;
 }
 
 .btn-ir-equipos {
   display: inline-block;
-  background-color: #667eea;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 11px 25px;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-size: 14px;
 }
 
 .btn-ir-equipos:hover {
-  background-color: #5568d3;
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
 }
 
 .cargando {

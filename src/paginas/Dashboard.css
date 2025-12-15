@@ -14,13 +14,14 @@
 }
 
 .dashboard-encabezado h1 {
-  color: #2c3e50;
+  color: var(--color-text);
   font-size: 28px;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .dashboard-encabezado p {
-  color: #7f8c8d;
+  color: var(--color-text-light);
   font-size: 15px;
 }
 
@@ -32,19 +33,21 @@
 }
 
 .tarjeta-estadistica {
-  background: white;
+  background: var(--color-white);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   gap: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .tarjeta-estadistica:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-light);
 }
 
 .estadistica-icono {
@@ -54,31 +57,34 @@
 
 .estadistica-contenido h3 {
   margin: 0 0 8px 0;
-  color: #2c3e50;
+  color: var(--color-text-light);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 .estadistica-contenido .numero {
   margin: 0;
   font-size: 28px;
-  font-weight: bold;
-  color: #667eea;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .dashboard-acciones {
-  background: white;
+  background: var(--color-white);
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
 }
 
 .dashboard-acciones h2 {
-  color: #2c3e50;
+  color: var(--color-text);
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .acciones-grid {
@@ -88,10 +94,10 @@
 }
 
 .accion-tarjeta {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
   padding: 25px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -103,7 +109,7 @@
 
 .accion-tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
 }
 
 .accion-icono {
