@@ -1,34 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
+import Login from './paginas/Login'
+import Registro from './paginas/Registro'
+import Dashboard from './paginas/Dashboard'
+import Equipos from './paginas/Equipos'
+import MisReservas from './paginas/MisReservas'
+import Navegacion from './componentes/Navegacion'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [usuarioAutenticado, setUsuarioAutenticado] = useState(false)
+  const [usuario, setUsuario] = useState(null)
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    const usuarioGuardado = localStorage.getItem('usuario')
+    if (token && usuarioGuardado) {
+      setUsuarioAutenticado(true)
+      setUsuario(JSON.parse(usuarioGuardado))
+    }
+  }, [])
+
+  const manejarLogin = (token, datosUsuario) => {
+    localStorage.setItem('token', token)
+    localStorage.setItem('usuario', JSON.stringify(datosUsuario))
+    setUsuarioAutenticado(true)
+    setUsuario(datosUsuario)
+  }
+
+  const manejarLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('usuario')
+    setUsuarioAutenticado(false)
+    setUsuario(null)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app-container">
+      {usuarioAutenticado && <Navegacion usuario={usuario} onLogout={manejarLogout} />}
+      <Routes>
+        <Route path="/login" element={<Login onLogin={manejarLogin} />} />
+        <Route path="/registro" element={<Registro onLogin={manejarLogin} />} />
+        <Route 
+          path="/dashboard" 
+          element={usuarioAutenticado ? <Dashboard usuario={usuario} /> : <Navigate to="/login" />} 
+        />
+        <Route 
+          path="/equipos" 
+          element={usuarioAutenticado ? <Equipos usuario={usuario} /> : <Navigate to="/login" />} 
+        />
+        <Route 
+          path="/mis-reservas" 
+          element={usuarioAutenticado ? <MisReservas usuario={usuario} /> : <Navigate to="/login" />} 
+        />
+        <Route path="/" element={usuarioAutenticado ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
+      </Routes>
+    </div>
   )
 }
 
