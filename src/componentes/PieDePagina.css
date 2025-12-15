@@ -1,20 +1,24 @@
 .pie-de-pagina {
   width: 100%;
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .pie-de-pagina-contenedor {
   max-width: var(--ancho-maximo-contenido);
   margin: 0 auto;
-  padding: 14px var(--container-padding-desktop);
+  padding: 20px var(--container-padding-desktop);
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .pie-de-pagina-texto {
-  font-size: 12px;
-  opacity: 0.9;
+  font-size: 13px;
+  color: var(--color-text-light);
+  font-weight: 500;
 }
 
 @media (max-width: 480px) {
