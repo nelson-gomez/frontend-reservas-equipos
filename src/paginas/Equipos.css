@@ -1,64 +1,70 @@
 .equipos-contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: var(--spacing-2xl) var(--container-padding-desktop);
+  display: flex;
+  flex-direction: column;
 }
 
 .equipos-encabezado {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .equipos-encabezado h1 {
   color: #2c3e50;
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
 .equipos-encabezado p {
   color: #7f8c8d;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .filtro-seccion {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .filtro-seccion h2 {
   color: #2c3e50;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-size: 18px;
 }
 
 .filtro-grupo {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .input-fecha {
-  padding: 12px;
+  padding: 11px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
   flex: 1;
-  max-width: 300px;
+  min-width: 200px;
 }
 
 .btn-buscar {
   background-color: #667eea;
   color: white;
-  padding: 12px 30px;
+  padding: 11px 25px;
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-buscar:hover:not(:disabled) {
@@ -72,7 +78,7 @@
 
 .equipos-seccion {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -80,18 +86,19 @@
 .equipos-seccion h2 {
   color: #2c3e50;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .equipos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 15px;
 }
 
 .tarjeta-equipo {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 25px;
+  padding: 20px;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -106,32 +113,32 @@
 }
 
 .equipo-icono {
-  font-size: 50px;
-  margin-bottom: 15px;
+  font-size: 45px;
+  margin-bottom: 12px;
 }
 
 .tarjeta-equipo h3 {
   color: #2c3e50;
-  margin: 0 0 10px 0;
-  font-size: 18px;
+  margin: 0 0 8px 0;
+  font-size: 16px;
 }
 
 .equipo-descripcion {
   color: #555;
-  font-size: 14px;
-  margin: 0 0 15px 0;
-  min-height: 40px;
+  font-size: 13px;
+  margin: 0 0 12px 0;
+  min-height: 35px;
 }
 
 .equipo-estado {
-  font-size: 12px;
+  font-size: 11px;
   color: #7f8c8d;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .equipo-estado span {
   font-weight: bold;
-  padding: 4px 8px;
+  padding: 3px 7px;
   border-radius: 4px;
   background-color: rgba(102, 126, 234, 0.2);
   color: #667eea;
@@ -140,10 +147,10 @@
 .btn-reservar {
   background-color: #27ae60;
   color: white;
-  padding: 10px 20px;
+  padding: 9px 18px;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -162,13 +169,215 @@
 .sin-equipos {
   text-align: center;
   color: #7f8c8d;
-  padding: 40px;
-  font-size: 16px;
+  padding: 30px;
+  font-size: 15px;
 }
 
 .cargando {
   text-align: center;
   color: #7f8c8d;
-  padding: 40px;
-  font-size: 16px;
+  padding: 30px;
+  font-size: 15px;
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .equipos-contenedor {
+    padding: var(--spacing-lg) var(--container-padding-mobile);
+  }
+
+  .equipos-encabezado h1 {
+    font-size: 22px;
+  }
+
+  .equipos-encabezado p {
+    font-size: 13px;
+  }
+
+  .filtro-seccion {
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+
+  .filtro-seccion h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .filtro-grupo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-fecha {
+    min-width: 100%;
+    padding: 10px;
+  }
+
+  .btn-buscar {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .equipos-seccion {
+    padding: 18px;
+  }
+
+  .equipos-seccion h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .equipos-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tarjeta-equipo {
+    padding: 18px;
+  }
+
+  .equipo-icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .tarjeta-equipo h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .equipo-descripcion {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .btn-reservar {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Responsive para tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .equipos-contenedor {
+    padding: var(--spacing-xl) var(--container-padding-tablet);
+  }
+
+  .equipos-encabezado h1 {
+    font-size: 25px;
+  }
+
+  .filtro-seccion {
+    padding: 20px;
+  }
+
+  .filtro-grupo {
+    flex-wrap: wrap;
+  }
+
+  .input-fecha {
+    min-width: 250px;
+  }
+
+  .equipos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tarjeta-equipo {
+    padding: 18px;
+  }
+
+  .equipo-icono {
+    font-size: 42px;
+  }
+
+  .tarjeta-equipo h3 {
+    font-size: 15px;
+  }
+}
+
+/* Responsive para desktop */
+@media (min-width: 769px) {
+  .equipos-contenedor {
+    padding: var(--spacing-3xl) var(--container-padding-desktop);
+  }
+
+  .equipos-encabezado {
+    margin-bottom: 40px;
+  }
+
+  .equipos-encabezado h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .equipos-encabezado p {
+    font-size: 16px;
+  }
+
+  .filtro-seccion {
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .filtro-seccion h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .filtro-grupo {
+    gap: 15px;
+  }
+
+  .input-fecha {
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  .btn-buscar {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .equipos-seccion {
+    padding: 30px;
+  }
+
+  .equipos-seccion h2 {
+    margin-bottom: 25px;
+    font-size: 22px;
+  }
+
+  .equipos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tarjeta-equipo {
+    padding: 25px;
+  }
+
+  .equipo-icono {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+
+  .tarjeta-equipo h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .equipo-descripcion {
+    font-size: 14px;
+    margin-bottom: 15px;
+    min-height: 40px;
+  }
+
+  .btn-reservar {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }

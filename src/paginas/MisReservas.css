@@ -1,54 +1,59 @@
 .mis-reservas-contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: var(--spacing-2xl) var(--container-padding-desktop);
+  display: flex;
+  flex-direction: column;
 }
 
 .mis-reservas-encabezado {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .mis-reservas-encabezado h1 {
   color: #2c3e50;
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
 .mis-reservas-encabezado p {
   color: #7f8c8d;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .reservas-seccion {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .reservas-seccion h2 {
   color: #2c3e50;
   margin-top: 0;
-  margin-bottom: 25px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .reservas-lista {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .tarjeta-reserva {
-  padding: 20px;
+  padding: 18px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-left: 5px solid;
+  align-items: flex-start;
+  border-left: 4px solid;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .tarjeta-reserva.activa {
@@ -70,30 +75,32 @@
 .reserva-contenido {
   flex: 1;
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  min-width: 250px;
+  flex-wrap: wrap;
 }
 
 .reserva-equipo h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   color: #2c3e50;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .reserva-descripcion {
   margin: 0;
   color: #7f8c8d;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .reserva-detalles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .reserva-detalles p {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
 }
 
@@ -104,33 +111,32 @@
 .estado-activa {
   background-color: #d4edda;
   color: #155724;
-  padding: 4px 8px;
+  padding: 3px 7px;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .estado-cancelada {
   background-color: #f8d7da;
   color: #721c24;
-  padding: 4px 8px;
+  padding: 3px 7px;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .btn-cancelar {
   background-color: #e74c3c;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-  margin-left: 20px;
 }
 
 .btn-cancelar:hover:not(:disabled) {
@@ -144,7 +150,7 @@
 
 .sin-reservas {
   background: white;
-  padding: 60px 30px;
+  padding: 40px 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -152,19 +158,20 @@
 
 .sin-reservas p {
   color: #7f8c8d;
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 18px;
 }
 
 .btn-ir-equipos {
   display: inline-block;
   background-color: #667eea;
   color: white;
-  padding: 12px 30px;
+  padding: 11px 25px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-size: 14px;
 }
 
 .btn-ir-equipos:hover {
@@ -174,6 +181,190 @@
 .cargando {
   text-align: center;
   color: #7f8c8d;
-  padding: 40px;
-  font-size: 16px;
+  padding: 30px;
+  font-size: 15px;
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .mis-reservas-contenedor {
+    padding: var(--spacing-lg) var(--container-padding-mobile);
+  }
+
+  .mis-reservas-encabezado h1 {
+    font-size: 22px;
+  }
+
+  .mis-reservas-encabezado p {
+    font-size: 13px;
+  }
+
+  .reservas-seccion {
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+
+  .reservas-seccion h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .tarjeta-reserva {
+    padding: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .reserva-contenido {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .reserva-equipo h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .reserva-descripcion {
+    font-size: 12px;
+  }
+
+  .reserva-detalles p {
+    font-size: 12px;
+  }
+
+  .btn-cancelar {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .sin-reservas {
+    padding: 30px 20px;
+  }
+
+  .sin-reservas p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .btn-ir-equipos {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Responsive para tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .mis-reservas-contenedor {
+    padding: var(--spacing-xl) var(--container-padding-tablet);
+  }
+
+  .mis-reservas-encabezado h1 {
+    font-size: 25px;
+  }
+
+  .reservas-seccion {
+    padding: 22px;
+  }
+
+  .reservas-seccion h2 {
+    font-size: 18px;
+  }
+
+  .tarjeta-reserva {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .reserva-contenido {
+    flex-direction: column;
+  }
+
+  .reserva-equipo h3 {
+    font-size: 15px;
+  }
+
+  .btn-cancelar {
+    width: 100%;
+  }
+}
+
+/* Responsive para desktop */
+@media (min-width: 769px) {
+  .mis-reservas-contenedor {
+    padding: var(--spacing-3xl) var(--container-padding-desktop);
+  }
+
+  .mis-reservas-encabezado {
+    margin-bottom: 40px;
+  }
+
+  .mis-reservas-encabezado h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .mis-reservas-encabezado p {
+    font-size: 16px;
+  }
+
+  .reservas-seccion {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .reservas-seccion h2 {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  .reservas-lista {
+    gap: 15px;
+  }
+
+  .tarjeta-reserva {
+    padding: 20px;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .reserva-contenido {
+    gap: 30px;
+    flex-wrap: nowrap;
+  }
+
+  .reserva-equipo h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .reserva-descripcion {
+    font-size: 14px;
+  }
+
+  .reserva-detalles p {
+    font-size: 14px;
+  }
+
+  .btn-cancelar {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .sin-reservas {
+    padding: 60px 30px;
+  }
+
+  .sin-reservas p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .btn-ir-equipos {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
 }

@@ -2,13 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
 }
 
 .auth-caja {
   background: white;
-  padding: 40px;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -18,24 +25,25 @@
 .auth-caja h1 {
   text-align: center;
   color: #2c3e50;
-  margin-bottom: 30px;
-  font-size: 28px;
+  margin-bottom: 25px;
+  font-size: 26px;
 }
 
 .form-grupo {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .form-grupo label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #2c3e50;
   font-weight: 500;
+  font-size: 14px;
 }
 
 .form-grupo input {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
@@ -49,12 +57,12 @@
 
 .btn-primario {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   background-color: #667eea;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -71,8 +79,9 @@
 
 .auth-enlace {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 18px;
   color: #666;
+  font-size: 13px;
 }
 
 .auth-enlace a {
@@ -83,4 +92,101 @@
 
 .auth-enlace a:hover {
   text-decoration: underline;
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .auth-contenedor {
+    padding: 15px;
+  }
+
+  .auth-caja {
+    padding: 20px;
+  }
+
+  .auth-caja h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .form-grupo {
+    margin-bottom: 15px;
+  }
+
+  .form-grupo label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .form-grupo input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .btn-primario {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .auth-enlace {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+/* Responsive para tablet */
+@media (max-width: 768px) {
+  .auth-contenedor {
+    padding: 15px;
+  }
+
+  .auth-caja {
+    padding: 25px;
+  }
+
+  .auth-caja h1 {
+    font-size: 24px;
+  }
+
+  .form-grupo input {
+    padding: 10px;
+  }
+
+  .btn-primario {
+    padding: 10px;
+  }
+}
+
+/* Responsive para desktop */
+@media (min-width: 1024px) {
+  .auth-contenedor {
+    padding: 20px;
+  }
+
+  .auth-caja {
+    padding: 40px;
+  }
+
+  .auth-caja h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .form-grupo {
+    margin-bottom: 20px;
+  }
+
+  .form-grupo input {
+    padding: 12px;
+  }
+
+  .btn-primario {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .auth-enlace {
+    font-size: 14px;
+    margin-top: 20px;
+  }
 }
